@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MHP_Hackaton" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springboot-Hackaton/MHP_AI" vcs="Git" />
   </component>
 </project>
