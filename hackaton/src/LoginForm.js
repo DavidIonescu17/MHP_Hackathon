@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 
-const LoginForm = ({ handleLoginSuccess }) => {
+const LoginForm = ({ handleLoginSuccess, redirectToWelcome }) => {
     const [loginSuccess, setLoginSuccess] = useState(false);
 
     const loginUser = async (event) => {
@@ -30,7 +29,13 @@ const LoginForm = ({ handleLoginSuccess }) => {
     };
 
     if (loginSuccess) {
-        return <Navigate to="/welcome" replace={true} />;
+        // Redirect to the welcome page
+        return (
+            <>
+                {redirectToWelcome()}
+                <p>Succesful login! Please scroll down for Bookings.</p>
+            </>
+        );
     }
 
     return (

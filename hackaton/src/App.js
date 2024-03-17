@@ -1,5 +1,7 @@
+// App.js
+
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Paper from '@mui/material/Paper';
@@ -66,7 +68,14 @@ class App extends React.Component {
                                     {this.state.isLoginVisible ? 'Sign in' : 'Sign up'}
                                 </Typography>
                                 {this.state.isLoginVisible ? (
-                                    <LoginForm toggleForms={this.toggleForms} handleLoginSuccess={this.handleLoginSuccess} />
+                                    <LoginForm
+                                        toggleForms={this.toggleForms}
+                                        handleLoginSuccess={this.handleLoginSuccess}
+                                        redirectToWelcome={() => {
+                                            // Redirect to the welcome page upon successful login
+                                            return <Navigate to="/welcome" />;
+                                        }}
+                                    />
                                 ) : (
                                     <RegisterForm toggleForms={this.toggleForms} />
                                 )}

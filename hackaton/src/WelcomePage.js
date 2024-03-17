@@ -3,8 +3,15 @@ import { ReactComponent as MySVG } from 'C:/Users/pc/IdeaProjects/MHP_Hackaton_B
 
 const WelcomePage = () => {
     return (
-        <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <MySVG />
+        <div>
+            {/* Colored field with "Bookings" text */}
+            <div style={{ backgroundColor: 'blue', color: 'white', padding: '20px', textAlign: 'center', fontSize: '24px', height: '15vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                Bookings
+            </div>
+            {/* SVG content */}
+            <div style={{ height: 'calc(90vh)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <MySVG />
+            </div>
         </div>
     );
 }
